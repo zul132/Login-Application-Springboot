@@ -11,10 +11,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class RegController {
 
     @Autowired
-    private RegService reg_service;
+    private RegService regService;
 
-    @GetMapping("/reg")
-    public String api2() {
+    @GetMapping("/")
+    public String api()
+    {
+ 
         return "register";
     }
     
