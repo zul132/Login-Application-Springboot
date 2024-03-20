@@ -17,13 +17,6 @@ public class LogController {
     @Autowired
     private LogService service;
  
-    /* @GetMapping("/")
-    public String api()
-    {
- 
-        return "log";
-    } */
- 
     @PostMapping("/log")
     public String login(@ModelAttribute("user") Login user) {
  
@@ -33,7 +26,7 @@ public class LogController {
         if (Objects.nonNull(oauthUser)) {
             return "redirect:/display";
         } else {
-            return "redirect:/";
+            return "redirect:/login";
         }
     }
  

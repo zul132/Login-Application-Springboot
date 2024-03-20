@@ -2,7 +2,6 @@ package com.fathimazulaikha.test.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.fathimazulaikha.test.domain.Login;
 import com.fathimazulaikha.test.repository.LogRepo;
 
@@ -19,11 +18,11 @@ public class RegService {
     @Autowired
     private LogRepo userRepository;
 
-    public void saveUser(String username, String password, String confirm)
+    public Login saveUser(String username, String password, String confirm)
     {
+        Login user = new Login();
         try{
             if(password.equals(confirm)){
-                Login user = new Login();
                 user.setUsername(username);
                 user.setPassword(password);
                 userRepository.save(user);
@@ -34,5 +33,6 @@ public class RegService {
             //print the error messsage
             System.out.println(ex.getMessage());
         }
+        return user;
     }
 }
