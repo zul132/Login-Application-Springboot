@@ -27,7 +27,7 @@ public class RegController {
         return "register";
     }
 
-    @PostMapping("path")
+    @PostMapping("/reg")
     public String register(@ModelAttribute("user")  Register user)
     {
         Login newUser = regService.saveUser(user.getUsername(), user.getPassword(), user.getConfirm());
