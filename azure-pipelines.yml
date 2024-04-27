@@ -6,7 +6,7 @@
 trigger:
 - main
 
-pool: My-Self-Agent
+pool: new-agent-pool
 
 steps:
 - task: Maven@4
